@@ -12,9 +12,9 @@ func NewStorage() *Storage {
 }
 
 func (s *Storage) Upload(filename string, blob []byte) (*file2.File, error) {
-	newFile, err := file2.NewFile(filename, blob)
-	if err != nil {
-		return nil, err
-	}
-	return newFile, nil
+	return file2.NewFile(filename, blob)
+	//if err != nil {
+	//	return nil, err
+	//}
+	//return newFile, nil
 }
