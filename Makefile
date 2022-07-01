@@ -1,3 +1,5 @@
 .PHONY: run
 run:
-	go run c/go/storge/main.go
+	go run mnt/c/go/storge/main.go
+
+
