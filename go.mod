@@ -1,4 +1,4 @@
-module Storage
+module github.com/TrifonovDA/Storage
 
 go 1.18
 

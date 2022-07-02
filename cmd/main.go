@@ -1,8 +1,8 @@
 package main
 
 import (
-	"Storage/internal/storage"
 	"fmt"
+	"github.com/TrifonovDA/Storage/internal/storage"
 	"log"
 )
 

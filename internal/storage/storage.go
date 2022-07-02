@@ -1,23 +1,23 @@
 package storage
 
 import (
-	file2 "Storage/internal/file"
 	"fmt"
+	file "github.com/TrifonovDA/Storage/internal/file"
 	"github.com/google/uuid"
 )
 
 type Storage struct {
-	Files map[uuid.UUID]*file2.File
+	Files map[uuid.UUID]*file.File
 }
 
 func NewStorage() *Storage {
 	return &Storage{
-		Files: make(map[uuid.UUID]*file2.File),
+		Files: make(map[uuid.UUID]*file.File),
 	}
 }
 
-func (s *Storage) Upload(filename string, blob []byte) (*file2.File, error) {
-	newFile, err := file2.NewFile(filename, blob)
+func (s *Storage) Upload(filename string, blob []byte) (*file.File, error) {
+	newFile, err := file.NewFile(filename, blob)
 	if err != nil {
 		return nil, err
 	}
@@ -26,7 +26,7 @@ func (s *Storage) Upload(filename string, blob []byte) (*file2.File, error) {
 	return newFile, nil
 }
 
-func (s *Storage) GetByID(FileID uuid.UUID) (*file2.File, error) {
+func (s *Storage) GetByID(FileID uuid.UUID) (*file.File, error) {
 	foundFile, ok := s.Files[FileID]
 	if ok == false {
 		return nil, fmt.Errorf("File %v not found", FileID)
